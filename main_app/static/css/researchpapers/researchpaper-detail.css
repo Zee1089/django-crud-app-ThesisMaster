@@ -24,13 +24,6 @@
     margin-top: 20px;
   }
   
-  .references-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 20px;
-    align-items: center;
-  }
-  
   .subsection-title {
     display: flex;
     align-items: center;
@@ -41,7 +34,7 @@
     margin: 0 8px;
   }
   
-  .references-container {
+  .status-container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -189,11 +182,24 @@
   @media only screen and (min-width: 768px) {
     .researchpaper-container {
       padding: 35px 30px;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
-      justify-content: start;
+      justify-content: center;
     }
-  
+
+    .comments-section {
+        margin-top: 40px;
+        width: 100%;
+      }
+      
+    .add-comment-btn {
+        width: 80px; /* Set the desired width */
+        height: 40px; /* Set the desired height */
+        font-size: 16px; /* Adjust font size */
+        padding: 8px 16px; /* Adjust padding for spacing inside the button */
+        border-radius: 5px; /* Optional: to make the button corners rounded */
+    }
+    
     .researchpaper-img {
       width: 25%;
       max-width: 250px;

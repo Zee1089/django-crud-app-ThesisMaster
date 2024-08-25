@@ -10,6 +10,10 @@ urlpatterns = [
     path('researchpapers/create/', views.ResearchPaperCreate.as_view(), name='researchpaper-create'),
     path('researchpapers/<int:pk>/update/', views.ResearchPaperUpdate.as_view(), name='researchpaper-update'),
     path('researchpapers/<int:pk>/delete/', views.ResearchPaperDelete.as_view(), name='researchpaper-delete'),
-
+    path(
+        'researchpapers/<int:researchpaper_id>/add-comment/', 
+        views.add_comment, 
+        name='add-comment'
+    ),
 ]
 
