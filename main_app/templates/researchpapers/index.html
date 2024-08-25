@@ -1,12 +1,13 @@
 {% extends 'base.html' %} 
 {% load static %} 
 {% block head %}
+
 <link rel="stylesheet" href="{% static 'css/researchpapers/researchpaper-index.css' %}"/>
 {% endblock %} 
 {% block content %}
 
+<!-- <h2 class="h2">Research Papers</h2> -->
 <section class="page-header">
-  <h1>Research Paper List</h1>
 </section>
 
 <section class="card-container">
@@ -14,7 +15,6 @@
     <div class="card">
       <a href="{% url 'researchpaper-detail' researchpaper.id %}">
         <div class="card-content">
-          <div class="card-img-container">
             <!-- Optionally include an image here -->
           </div>
           <h2 class="card-title">{{ researchpaper.title }}</h2>

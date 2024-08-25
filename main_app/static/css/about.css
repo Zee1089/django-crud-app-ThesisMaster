@@ -1,0 +1,24 @@
+.centered-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Make the entire home page fixed */
+body, html {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right:0;
+    overflow: hidden;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+/* Optional: Add specific styling for content */
+.main-content {
+    max-height: 100vh; 
+    overflow-y: auto; /* If you still want scrolling within the fixed content */
+}

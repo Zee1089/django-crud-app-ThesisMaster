@@ -6,9 +6,9 @@ from datetime import date
 class ResearchPaper(models.Model):
     title = models.CharField(max_length=250)
     authors = models.CharField(max_length=500) 
-    journal = models.CharField(max_length=250)  # Added field for journal name
-    publication_date = models.DateField()  # Changed to DateField to store dates
-    major_findings = models.TextField()  # Changed to TextField for textual data
+    journal = models.CharField(max_length=250)  
+    publication_date = models.DateField() 
+    major_findings = models.TextField(max_length=800)
     # status = models.ManyToManyField(Status)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -21,12 +21,36 @@ class ResearchPaper(models.Model):
 
 
 class Comment(models.Model):
-    date = models.DateField()
-    note = models.CharField(max_length=400)
+    date = models.DateField(auto_now_add=True)
+    note = models.TextField(max_length=400)
     researchpaper = models.ForeignKey(ResearchPaper, on_delete=models.CASCADE)
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
-        return f"Comment on {self.date}"
+        return f"Comment by {self.user.username} on {self.date}"
+
     # Define the default order of feedings
     class Meta:
         ordering = ['-date']  # This line makes the newest feedings appear first
+
+STATUS = (
+    ('R', 'Read'),
+    ('A', 'Added'),
+    ('P', 'Pending Review/Comment'),
+    ('I', 'In Progress'),
+    ('C', 'Completed'),
+    ('D', 'Discarded'),
+)
+
+class Status(models.Model):
+    status_date = models.DateField() 
+    status = models.CharField(
+        max_length=1,
+        choices=STATUS,
+        default=STATUS[0][0]
+    )
+
+    def __str__(self):
+        return f"{self.get_status_display()} on {self.status_date}"
+
+    def get_absolute_url(self):
+        return reverse('status-detail', kwargs={'pk': self.id})

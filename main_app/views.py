@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import ResearchPaper, Comment
+from django.views.generic import ListView, DetailView
+from .models import ResearchPaper, Comment, Status
 from .forms import CommentForm
 
 class ResearchPaperCreate(CreateView):
@@ -17,12 +18,29 @@ class ResearchPaperDelete(DeleteView):
     model = ResearchPaper
     success_url = '/researchpapers/'  # Update the success URL to match your research papers' app
 
+class StatusCreate(CreateView):
+    model = Status
+    fields = '__all__'
 
+class StatusList(ListView):
+    model = Status
+
+class StatusDetail(DetailView):
+    model = Status
+
+class StatusUpdate(UpdateView):
+    model = Status
+    fields = ['date', 'status']
+
+class StatusDelete(DeleteView):
+    model = Status
+    success_url = '/status/'
+
+def home(request):
+    return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
-
-# views.py
 
 def researchpaper_index(request):
     # Query all ResearchPaper objects from the database

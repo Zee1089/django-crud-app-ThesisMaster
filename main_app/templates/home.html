@@ -1,15 +1,15 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %} -->
+{% block body_class %}scroll-locked{% endblock %}
 {% load static %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/home.css' %}" />
 {% endblock %}
 {% block content %}
-
 <section class="logo-container">
-  <div class="paper-container">
-    <img src="{% static 'images/bookworm.svg' %}" alt="" />
+    <h1>THESIS MASTERED</h1>
+    <div class="paper-container">
+    <img src="{% static 'images/bookworm.svg' %}" alt="Bookworm Logo" />
+    <h2>THESIS MASTERED</h2>
   </div>
-  <img src="{% static 'images/bookworm.svg' %}" alt="" />
 </section>
-
 {% endblock %}

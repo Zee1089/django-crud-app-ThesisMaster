@@ -1,4 +1,5 @@
 {% extends 'base.html' %} 
+{% block body_class %}scroll-locked{% endblock %}
 {% load static %} 
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/form.css' %}" />
@@ -9,7 +10,7 @@
     {% if cat %}
         <h1>Edit {{ object.title }}</h1>
     {% else %}
-        <h1>Add a Research Paper</h1>
+        <h1></h1>
     {% endif %}
     <img src="{% static 'images/bookworm.svg' %}" alt="A bookworm icon" class="bookicon"/>
 </div>

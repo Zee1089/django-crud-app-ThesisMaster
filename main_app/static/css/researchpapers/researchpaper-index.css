@@ -1,3 +1,71 @@
+/* Allow scrolling on the research index page */
+body, html {
+    position: static !important; /* Override fixed positioning */
+    overflow: auto !important; /* Enable scrolling */
+    height: auto !important; /* Allow the height to grow based on content */
+}
+
+
+.card-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 275px;
+    margin: 10px;
+    border: 1.5px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: visible;
+    background-color: rgb(232, 237, 238);
+}
+
+.card-content {
+    padding: 10px;
+    width: 100%;
+    background-color: rgba(135, 215, 225, 0);
+}
+
+.usr-img {
+    width: 25%;
+    border-radius: var(--card-border-radius);
+}
+
+.card > a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.card h2 {
+    margin: 10px 0;
+    font-size: var(--font-l);
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: var(--font-reg);
+}
+
+.card-title {
+    color: rgb(12, 140, 225);
+}
+
+.authors {
+    color: rgb(133, 103, 103);
+}
+
+.h2 {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-container {
     padding: 0 30px;
     display: flex;
@@ -8,21 +76,23 @@
   .card {
     width: 275px;
     margin: 10px;
-    border: 1px solid black;
+    border: 1.5px solid black;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     padding: 12px;
     box-sizing: border-box;
     border-radius: 8px;
     overflow: visible;
+    background-color: rgb(232, 237, 238);
   }
   
   .card-content {
     padding: 10px;
     width: 100%;
+    background-color: rgba(135, 215, 225, 0);
   }
   
   .usr-img {
-    width: 100%;
+    width: 25%;
     border-radius: var(--card-border-radius);
   }
   
@@ -33,7 +103,7 @@
   
   .card h2 {
     margin: 10px 0;
-    font-size: var(--font-xl);
+    font-size: var(--font-l);
   }
   
   .card p {
@@ -47,4 +117,11 @@
   
   .authors {
     color: rgb(133, 103, 103);
+  }
+
+  .h2 {
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }

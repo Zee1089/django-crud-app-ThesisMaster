@@ -1,12 +1,14 @@
 .form-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
   
   table {
     padding: 0 40px;
-    width: 100%;
+    width: 65%;
     border-spacing: 0 20px;
   }
   
@@ -43,3 +45,70 @@
     height: auto;
     margin-left: 20px; 
   }
+
+
+
+
+
+/* 
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+table {
+    padding: 0 40px;
+    width: 65%;
+    border-spacing: 0 20px;
+}
+
+th {
+    text-align: left;
+    padding: 6px 20px 0 0;
+    font-weight: normal;
+    vertical-align: top;
+    font-size: var(--font-reg);
+}
+
+td {
+    max-width: 60%;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+td > input,
+td > textarea {
+    width: 100%;
+    padding: 2px 4px;
+    font-size: var(--font-l);
+    border: none;
+    border-bottom: 1px solid transparent;
+    outline: none;
+    background: none;
+}
+
+td > input:focus,
+td > textarea:focus {
+    border-bottom: 1px solid #000;
+}
+
+td > textarea {
+    height: calc(4 * var(--font-l) + 8px);
+    font-family: inherit;
+    resize: none;
+}
+
+.btn {
+    align-self: flex-end;
+    margin-right: 40px;
+}
+
+.bookicon {
+    max-width: 50px;
+    height: auto;
+    margin-left: 20px; 
+} */

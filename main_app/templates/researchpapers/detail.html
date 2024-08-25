@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
+{% block body_class %}scroll-locked{% endblock %}
 {% load static %} 
-
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/researchpapers/researchpaper-detail.css' %}" />
 {% endblock %} 
@@ -40,30 +40,20 @@
                 <button type="submit" class="btn submit">Add Comment</button>
             </form>
 
-            <h3>Past Comments</h3>
             {% if researchpaper.comment_set.all.count %}
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Comment</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for comment in researchpaper.comment_set.all %}
-                        <tr>
-                            <td>{{ comment.date }}</td>
-                            <td>{{ comment.note }}</td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
+            <div>
+                <h3><strong>{{ comment.date }}:</strong> {{ comment.note }}</h3>
+            </div>
+                <ul>
+                    {% for comment in researchpaper.comment_set.all %}
+                   
+                    {% endfor %}
+                </ul>
             {% else %}
                 <div class="subsection-content">
-                    <p>⚠️ There are no comments on this research paper yet!</p>
+                    <p>There are no comments on this research paper yet!</p>
                 </div>
             {% endif %}
-
 
 
           <table>

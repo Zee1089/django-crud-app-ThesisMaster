@@ -1,0 +1,30 @@
+{% extends 'base.html' %} 
+{% block body_class %}scroll-locked{% endblock %}
+{% load static %} 
+{% block head %}
+  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+{% endblock %} 
+{% block content %}
+
+  <div class="page-header">
+    {% if object %}
+      <h1>Edit {{ object.name }}</h1>
+      <p>Date: {{ object.status_date }}</p> 
+      <h1>Edit {{ object.get_status_display }}</h1>
+      <p>Date: {{ object.status_date }}</p> 
+
+    {% else %}
+      <h1>Add a Status</h1>
+    {% endif %}
+    <!-- <img src="{% static 'images/status-icon.svg' %}" alt="Status Icon" /> -->
+  </div>
+  <form action="" method="post" class="form-container" autocomplete="off">
+    {% csrf_token %}
+    <table>
+      {{ form.as_table }}
+    </table>
+    <button type="submit" class="btn submit">Submit!</button>
+  </form>
+{% endblock %}
+
+

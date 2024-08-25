@@ -7,8 +7,8 @@
   }
   
   .researchpaper-img img {
-    max-width: 50px; /* Set this to whatever size you want the image to be */
-    height: auto;    /* This ensures the aspect ratio is maintained */
+    max-width: 50px; 
+    height: auto;    
   }
   
   .usr-img {
@@ -187,17 +187,14 @@
       justify-content: center;
     }
 
-    .comments-section {
-        margin-top: 40px;
-        width: 100%;
-      }
-      
-    .add-comment-btn {
-        width: 80px; /* Set the desired width */
-        height: 40px; /* Set the desired height */
-        font-size: 16px; /* Adjust font size */
-        padding: 8px 16px; /* Adjust padding for spacing inside the button */
-        border-radius: 5px; /* Optional: to make the button corners rounded */
+
+       
+      .add-comment-btn {
+        width: 80px; 
+        height: 40px;
+        font-size: 16px; 
+        padding: 8px 16px; 
+        border-radius: 5px; 
     }
     
     .researchpaper-img {
@@ -206,11 +203,7 @@
       margin-right: 25px;
     }
   
-    .references-container {
-      flex-direction: row;
-      justify-content: space-around;
-      align-items: flex-start;
-    }
+  
   
     .references-container > section {
       width: 45%;
@@ -222,4 +215,4 @@
       padding: 0 40px;
     }
   }
-  
+
