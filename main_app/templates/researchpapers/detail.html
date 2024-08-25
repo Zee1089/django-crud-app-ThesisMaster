@@ -15,6 +15,12 @@
     <h3>Journal: {{ researchpaper.journal }}</h3>
     <p>Published on: {{ researchpaper.publication_date }}</p>
     <p>{{ researchpaper.major_findings }}</p>
+    <div class="researchpaper-actions">
+        <a href="{% url 'researchpaper-update' researchpaper.id %}" class="btn warn">Edit</a>
+        <a href="{% url 'researchpaper-delete' researchpaper.id %}" class="btn danger">Delete</a>
+      </div>
+    </div>
+
   </div>
 </section>
 {% endblock %}

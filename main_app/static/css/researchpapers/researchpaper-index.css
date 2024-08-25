@@ -8,8 +8,12 @@
   .card {
     width: 275px;
     margin: 10px;
-    border: var(--borders);
-    box-shadow: var(--card-box-shadow);
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: visible;
   }
   
   .card-content {
@@ -36,4 +40,11 @@
     margin: 5px 0;
     font-size: var(--font-reg);
   }
+
+  .card-title {
+    color: rgb(12, 140, 225);
+  }
   
+  .authors {
+    color: rgb(133, 103, 103);
+  }

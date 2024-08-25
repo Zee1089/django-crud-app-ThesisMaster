@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class ResearchPaper(models.Model):
     title = models.CharField(max_length=250)
@@ -9,3 +10,7 @@ class ResearchPaper(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+    # Use the 'reverse' function to dynamically find the URL for viewing this cat's details
+        return reverse('researchpaper-detail', kwargs={'researchpaper_id': self.id})

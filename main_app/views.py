@@ -1,59 +1,22 @@
-# main_app/views.py
-
 from django.shortcuts import render
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import ResearchPaper 
-# Import HttpResponse to send text-based responses
-from django.http import HttpResponse
 
-# views.py
+class ResearchPaperCreate(CreateView):
+    model = ResearchPaper
+    fields = '__all__'
+    success_url = '/researchpapers/'
+    
+class ResearchPaperUpdate(UpdateView):
+    model = ResearchPaper
+    # Specify the fields that can be updated
+    fields = ['title', 'authors', 'journal', 'publication_date', 'major_findings']
 
-# class ResearchPaper:
-#     def __init__(self, title, authors, journal, publication_date, major_findings):
-#         self.title = title
-#         self.authors = authors
-#         self.journal = journal
-#         self.publication_date = publication_date
-#         self.major_findings = major_findings
-
-# # Create a list of ResearchPaper instances
-# research_papers = [
-#     ResearchPaper(
-#         "Neural Mechanisms of Anorexia",
-#         ["Dr. Jane Smith", "Dr. John Doe"],
-#         "Journal of Neuroscience",
-#         "2023-04-15",
-#         "Identified altered activity in the hypothalamus linked to appetite suppression."
-#     ),
-#     ResearchPaper(
-#         "Cognitive Behavioral Therapy for PTSD",
-#         ["Dr. Emily Johnson", "Dr. Michael Lee"],
-#         "Journal of Clinical Psychology",
-#         "2022-10-20",
-#         "Showed significant improvement in PTSD symptoms after 12 weeks of therapy."
-#     ),
-#     ResearchPaper(
-#         "The Role of Gut Microbiota in Depression",
-#         ["Dr. Susan Martinez", "Dr. Robert Brown"],
-#         "Journal of Psychiatry & Neuroscience",
-#         "2021-07-05",
-#         "Demonstrated a correlation between gut microbiota composition and depressive behavior in mice."
-#     ),
-#     ResearchPaper(
-#         "Genetic Variants Associated with Schizophrenia",
-#         ["Dr. Linda Green", "Dr. Richard White"],
-#         "Journal of Genetic Research",
-#         "2020-11-30",
-#         "Discovered several genetic variants significantly associated with an increased risk of schizophrenia."
-#     )
-# ]
+class ResearchPaperDelete(DeleteView):
+    model = ResearchPaper
+    success_url = '/researchpapers/'  # Update the success URL to match your research papers' app
 
 
-# Define the home view function
-def home(request):
-    # Send a simple HTML response
-    return HttpResponse('<h1>All of your Selected Research Articles Found Here</h1>')
-
-# main_app/views.py
 
 def about(request):
     return render(request, 'about.html')
