@@ -1,45 +1,41 @@
 .sidenave {
-    height: 100%; /* Full height of the viewport */
-    width: 280px; /* Width of the sidebar */
-    position: fixed; /* Fixed position so it stays in place when scrolling */
-    z-index: 1000; /* Ensure it's above other elements */
-    top: 0; /* Align it to the top of the page */
-    left: 0; /* Align it to the left of the page */
+    height: 100%; 
+    width: 250px; 
+    position: fixed; 
+    z-index: 1000; 
+    top: 0; 
+    left: 0; 
     /* left: -250px; */
-    background-color: #d3e2ff; /* Background color */
-    overflow-x: hidden; /* Hide horizontal overflow */
-    padding-top: 20px; /* Padding at the top */
+    background-color: #d3e2ff; 
+    overflow-x: hidden; 
+    padding-top: 20px; 
     border-right: 1px solid #263b64;
+    
     /* transition: left 0.3s ease;  */
 }
 
+.sidenave1{
+    font-weight: bold;
+}
+
+.sidenave2{
+    font-weight: bold;
+}
+
 .sidenave a {
-    padding: 10px 20px; /* Increase padding for a larger click area */
+    padding: 10px 20px; 
     text-decoration: none;
-    font-size: 18px; /* Adjust the font size */
-    color: #263b64; /* Text color */
+    font-size: 18px; 
+    color: #263b64; 
     display: block;
-}
 
+}
 .sidenave a:hover {
-    color: rgb(152, 65, 155); /* Change color on hover */
-}
-
-.sidenav-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 50px; /* Width of the hover area */
-    z-index: 1000;
-}
-
-.sidenav-container:hover .sidenave {
-    left: 0; /* Show the sidenav on hover */
+    color: rgb(152, 65, 155); 
 }
 
 .sidenave .research-title {
-    font-size: 14px; /* Smaller size for research paper titles */
-    padding-left: 30px; /* Optional: indent to differentiate further */
+    font-size: 14px; 
+    padding-left: 30px; 
     color: black;
 }

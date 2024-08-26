@@ -15,6 +15,7 @@ body, html {
     height: 100%;
     overflow-y: hidden;
     overflow-x: hidden;
+    margin-left: 320px;
 }
 
 /* Optional: Add specific styling for content */

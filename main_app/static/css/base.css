@@ -26,8 +26,8 @@ body {
     --button-bg: rgb(245, 245, 245);
     --button-bg-hover: rgb(226, 226, 226);
     --submit: rgb(64, 72, 220);
-    --warn: rgb(255, 102, 0);
-    --danger: rgb(220, 20, 30);
+    /* --warn: rgb(255, 102, 0);
+    --danger: rgb(220, 20, 30); */
     --secondary: rgb(57, 57, 57);
     --card-box-shadow: 5px 5px 6px -1px #aaa;
     --font-xtreme: 4.2rem;
@@ -45,10 +45,11 @@ body {
     justify-content: center;
     align-items: center;
     padding: 5% 0;
+    margin-top: 20px;
 
 }
 
-nav {
+/* nav {
     margin-top: 100px;
     margin-bottom: 0px;
     margin-left: auto;
@@ -56,7 +57,7 @@ nav {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-}
+} */
 
 ul {
     margin: 0;
@@ -68,6 +69,7 @@ main {
     margin-left: 250px;
     width: calc(100% - 250px);
     padding: 0 10px;
+    margin-top: 20px;
 
 }
 
@@ -255,6 +257,7 @@ nav li {
 body {
     /* background-color: #ffcc00; */
     background-color: #d3e2ff;
+    /* background-color: #bcccde; */
     background-image:
         radial-gradient(circle, #000 1px, transparent 1px),
         radial-gradient(circle, #000 1px, transparent 1px);
@@ -294,3 +297,20 @@ body {
     height: 100%;
     overflow: hidden;
 }
+
+#logout-form button {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+  }
+  
+  #logout-form button:hover {
+    color: var(--link-hover-color);
+  }
+  

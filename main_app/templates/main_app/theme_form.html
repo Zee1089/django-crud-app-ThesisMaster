@@ -8,16 +8,14 @@
 
   <div class="page-header">
     {% if object %}
-      <h1>Edit {{ object.name }}</h1>
-      <p>Date: {{ object.status_date }}</p> 
-      <h1>Edit {{ object.get_status_display }}</h1>
-      <p>Date: {{ object.status_date }}</p> 
-
+      <h1>Edit {{ object.get_theme_display }}</h1>
+      <p>Date: {{ object.theme_name }}</p> 
     {% else %}
-      <h1>Add a Status</h1>
+      <h1>Select the Theme and Keywords Associated with the paper</h1>
     {% endif %}
     <!-- <img src="{% static 'images/status-icon.svg' %}" alt="Status Icon" /> -->
   </div>
+
   <form action="" method="post" class="form-container" autocomplete="off">
     {% csrf_token %}
     <table>
@@ -25,6 +23,5 @@
     </table>
     <button type="submit" class="btn submit">Submit!</button>
   </form>
+
 {% endblock %}
-
-

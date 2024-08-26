@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/themes/theme-detail.css' %}" />
+{% endblock %} 
+{% block content %}
+
+<div class="theme-card" style="border-color: {{ theme.color }}">
+    <div class="card-bg" style="background-color: {{ theme.color }}"></div>
+    <div class="card-content">
+      <h2>Paper's Topics: {{ theme.theme_name }}</h2>
+      <h2>Paper Keywords: {{ theme.keywords}} </h2>
+    </div>
+  </div>
+  <span></span>
+  <span></span>
+  <span></span>
+  <a href="{% url 'theme-update' theme.id %}" class="btn warn">Edit</a>
+  <a href="{% url 'theme-delete' theme.id %}" class="btn danger">Delete</a>
+
+  {% endblock %}

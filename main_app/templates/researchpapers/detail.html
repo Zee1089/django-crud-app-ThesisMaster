@@ -1,52 +1,53 @@
-{% extends 'base.html' %} 
-{% block body_class %}scroll-locked{% endblock %}
+{% extends 'base.html' %}
+{% block body_class %}{% endblock %}
 {% load static %} 
 {% block head %}
-<link rel="stylesheet" href="{% static 'css/researchpapers/researchpaper-detail.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/researchpapers/researchpaper-detail.css' %}" />
 {% endblock %} 
 
 {% block content %}
 <section class="researchpaper-container">
-  <div class="researchpaper-img">
-    <!-- You can include an image related to the research paper if available -->
-    <img src="{% static 'images/bookworm.svg' %}" alt="Book Person Icon" />
-  </div>
-  <div class="researchpaper-details">
-    <h1>{{ researchpaper.title }}</h1>
-    <h2>Authors: {{ researchpaper.authors }}</h2>
-    <h3>Journal: {{ researchpaper.journal }}</h3>
-    <p>Published on: {{ researchpaper.publication_date }}</p>
-    <p>{{ researchpaper.major_findings }}</p>
+    <div class="researchpaper-img">
+        <!-- You can include an image related to the research paper if available -->
+        <!-- <img src="{% static 'images/bookworm.svg' %}" alt="Book Person Icon" /> -->
+    </div>
+    <div class="researchpaper-details">
+        <h1>{{ researchpaper.title }}</h1>
+        <h2><span style="font-weight: normal;"> {{ researchpaper.authors }} </span></h2>
+        <h3>{{ researchpaper.journal }}</h3>
+        <p>Published on: {{ researchpaper.publication_date }}</p>
+        <p>{{ researchpaper.major_findings }}</p>
 
-    <div class="researchpaper-actions">
-        <a href="{% url 'researchpaper-update' researchpaper.id %}" class="btn warn">Edit</a>
-        <a href="{% url 'researchpaper-delete' researchpaper.id %}" class="btn danger">Delete</a>
-      </div>
+        <div class="researchpaper-actions">
+            <a href="{% url 'researchpaper-update' researchpaper.id %}" class="btn warn">Edit</a>
+            <a href="{% url 'researchpaper-delete' researchpaper.id %}" class="btn danger">Delete</a>
+        </div>
     </div>
 
     <div class="comments-section">
         <section class="comments">
             <div class="subsection-title">
-                    <!-- <img src="{% static 'images/comment-icon.svg' %}" alt="Comment icon" /> -->
+                <!-- <img src="{% static 'images/comment-icon.svg' %}" alt="Comment icon" /> -->
             </div>
-            <!-- <h3>Add a Feeding</h3> -->
+    
+            <!-- Move the form to the top -->
             <form class="add-comment-btn"
-                action = "{% url 'add-comment' researchpaper.id %}"
-                method="post" 
-                class="subsection-content" 
-                autocomplete="off">
+                  action="{% url 'add-comment' researchpaper.id %}"
+                  method="post"
+                  class="subsection-content"
+                  autocomplete="off">
                 {% csrf_token %} 
                 {{ comment_form.as_p }}
                 <button type="submit" class="btn submit">Add Comment</button>
             </form>
-
+    
+            <!-- Then display the comments below the form -->
             {% if researchpaper.comment_set.all.count %}
-            <div>
-                <h3><strong>{{ comment.date }}:</strong> {{ comment.note }}</h3>
-            </div>
                 <ul>
                     {% for comment in researchpaper.comment_set.all %}
-                   
+                        <li>
+                            <h3><span style="font-weight: normal;"> {{ comment.date|date:"F j, Y" }}:</span> {{ comment.note }} by {{comment.user}}</h3>
+                        </li>
                     {% endfor %}
                 </ul>
             {% else %}
@@ -54,25 +55,53 @@
                     <p>There are no comments on this research paper yet!</p>
                 </div>
             {% endif %}
-
-
-          <table>
-            <!-- <thead>
-              <tr>
-                <th>Date</th>
-                <th>User</th>
-                <th>Comment</th>
-              </tr>
-            </thead> -->
-          </table>
         </section>
-      </div>
-      
-
-    
+    </div>
     
 
+    <section class="themes">
+        <div class="subsection-title">
+            <h2>Themes</h2>
+        </div>
 
-  </div>
-</section>
-{% endblock %}
+            <!-- displaying a cat's toys -->
+        <div class="subsection-content">
+            {% if researchpaper.themes.count %} 
+                {% for theme in researchpaper.themes.all %}
+                    <div class="theme-container">
+                        <div class="color-block" style="background-color: {{ theme.color }}"></div>
+                        <a href="{% url 'theme-detail' theme.id %}">
+                            <p>A {{ theme.color }} {{ theme.theme_name }}</p>
+                        </a>
+                        <form action="{% url 'remove-theme' researchpaper.id theme.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Remove Theme</button>
+                        </form>
+                    </div>
+                {% endfor %} 
+            {% endif %}
+        </div>
+
+        <!-- <h3>Available Toys</h3> -->
+        <h3>Themes</h3>
+        <div class="subsection-content">
+            {% if themes.count %}   
+                {% for theme in themes.all %}
+                    <div class="theme-container">
+                        <div class="color-block" style="background-color: {{ theme.color }}"></div>
+                        <a href="{% url 'theme-detail' theme.id %}">
+                            <p> {{ theme.theme_name}} </p>
+                        </a>
+                        <form action="{% url 'associate-theme' researchpaper.id theme.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn submit">Add Theme</button>
+                        </form> 
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="all-theme">{{researchpaper.title}} already contains all topics</p>
+            {% endif %}
+        </div>
+    </section>
+    {% endblock %}
+    

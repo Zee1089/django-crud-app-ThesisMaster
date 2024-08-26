@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+<!-- {% extends 'base.html' %} -->
 
 {% block body_class %}scroll-locked{% endblock %}
 
@@ -9,4 +9,15 @@
   Organizing your Thesis Master like a Master Chef.
   If you need help retrieving data from all the different papers, this can help you organize your work.
 </p>
+{% if user.is_authenticated %}
+  <form id="" method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+  </form>
+{% else %}
+  <a href="{% url 'about' %}">About</a>
+  <a href="{% url 'home' %}">Login</a>
+  <a href="{% url 'signup' %}">Sign Up</a>
+{% endif %}
+
 {% endblock %}

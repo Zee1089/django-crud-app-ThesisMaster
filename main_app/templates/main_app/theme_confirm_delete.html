@@ -3,14 +3,14 @@
 {% block content %}
 
 <div class="page-header">
-  <h1>Delete Status?</h1>
+  <h1>Remove Theme</h1>
   <!-- <img src="{% static 'images/nerd-cat.svg' %}" alt="A cat using a computer" /> -->
 </div>
-<h2>Are you sure you want to delete {{ object.name }}?</h2>
+<h2>Are you sure you want to delete {{ object.theme_name }}?</h2>
 
 <form action="" method="post" class="form">
   {% csrf_token %}
-  <a href="{% url 'status-detail' status.id %}" class="btn secondary"> Cancel </a>
+  <a href="{% url 'theme-detail' theme.id %}" class="btn secondary"> Cancel </a>
   <button type="submit" class="btn danger">Yes - Delete!</button>
 </form>
 

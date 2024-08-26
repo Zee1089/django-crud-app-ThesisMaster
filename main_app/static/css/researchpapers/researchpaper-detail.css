@@ -1,10 +1,40 @@
 .researchpaper-container {
-    padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  padding: 35px 30px;
+}
+
+
+.comments-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+    flex-direction: column; /* Ensures items are stacked vertically */
+}
+
+.comments-section .add-comment-btn {
+    order: 1; /* Ensure form appears first */
+}
+
+.comments-section .comments {
+    order: 2; /* Ensure comments list appears second */
+}
+
+.comments-section::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.comments-section .add-comment-btn {
+    margin-bottom: 250px; /* Add margin to push comments down */
+}
+
+.add-comment-btn {
+margin-left: 10px;
+}
+
   
   .researchpaper-img img {
     max-width: 50px; 

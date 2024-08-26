@@ -125,3 +125,9 @@ body, html {
     justify-content: center;
     align-items: center;
   }
+
+  .page-header{
+    display: flex;
+    margin-left: 20px;
+  }
+  
