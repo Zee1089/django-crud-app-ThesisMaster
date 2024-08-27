@@ -110,3 +110,74 @@ body {
     align-items: flex-start;
 
 }
+
+.theme-title-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #d3e2ff;
+    margin-bottom: 40px;
+}
+
+.theme-keywords-container {
+    max-width: 800px; /* Adjusted width for larger content */
+    background-color: #d3e2ff;
+    margin-bottom: 20px; /* Added margin for spacing between sections */
+}
+
+.theme-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.color-block {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.theme-card-content {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: large;
+    color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: aliceblue;
+    padding: 10px;
+    flex-grow: 1; /* Allow this element to fill the available space */
+    text-align: center;
+}
+
+.theme-kw-content {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: medium;
+    color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: rgb(255, 192, 203);
+    padding: 5px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+a {
+    text-decoration: none; /* Ensure no underline for links */
+    color: inherit; /* Inherit color from parent elements */
+}
+
+.btn {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.btn.danger {
+    background-color: purple;
+    color: white;
+}
+
+.btn.submit {
+    background-color: black;
+    color: white;
+}

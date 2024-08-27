@@ -17,15 +17,12 @@
 
 <section class="theme-keywords-container">
   {% for theme in theme_list %}
-    <div class="card" style="border-color: {{ theme.color }}">
-      <div class="card-bg" style="background-color: {{ theme.color }}"></div>
       <a href="{% url 'theme-detail' theme.id %}">
-        <div class="theme-card-content">
-          <h2>{{theme.theme_name}}</h2>
-          <h3>{{theme.keywords}}</h3>
+        <div >
+          <h2 class="theme-card-content">{{theme.theme_name}}</h2>
+          <h3 class="theme-kw-content"> {{theme.keywords}}</h3>
         </div>
       </a>
-    </div>
   {% endfor %}
 </section>
 </div>

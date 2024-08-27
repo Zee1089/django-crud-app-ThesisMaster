@@ -16,7 +16,7 @@
     <!-- <img src="{% static 'images/status-icon.svg' %}" alt="Status Icon" /> -->
   </div>
 
-  <form action="" method="post" class="form-container" autocomplete="off">
+  <form action="" method="post" class="form-content" autocomplete="off">
     {% csrf_token %}
     <table>
       {{ form.as_table }}

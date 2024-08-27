@@ -13,7 +13,7 @@
 }
 
 .theme-keywords-container {
-    max-width: 800px;
+    max-width: 400px;
     background-color: #d3e2ff;
 
 
@@ -24,7 +24,35 @@
 .theme-card-content {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-size: large;
-    color: rgb(73, 73, 151);
-    border: 1px solid pink;
+    color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+}
+.theme-keywords-container a {
+    text-decoration: none !important;
+}
+
+.theme-card-content {
+    text-decoration: none !important;
+}
+.theme-kw-content {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: large;
+    color: black;
+    border: 1px solid black;
+    border-radius: 25px;
+    background-color: rgb(255, 192, 203);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+
 
 }
