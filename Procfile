@@ -1,1 +1,1 @@
-web: gunicorn MindMApp.wsgi
+web: gunicorn ThesisMaster.wsgi
