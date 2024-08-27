@@ -5,7 +5,6 @@ body, html {
     height: auto !important; /* Allow the height to grow based on content */
 }
 
-
 .card-container {
     padding: 0 30px;
     display: flex;
@@ -17,18 +16,18 @@ body, html {
     width: 275px;
     margin: 10px;
     border: 1.5px solid black;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 2px 2px 2px lightpink; */
     padding: 12px;
     box-sizing: border-box;
     border-radius: 8px;
-    overflow: visible;
-    background-color: rgb(232, 237, 238);
+    /* overflow: visible; */
+    background-color: rgb(227, 180, 11);
 }
 
 .card-content {
     padding: 10px;
     width: 100%;
-    background-color: rgba(135, 215, 225, 0);
+    background-color: orange;
 }
 
 .usr-img {
@@ -66,24 +65,7 @@ body, html {
     align-items: center;
 }
 
-.card-container {
-    padding: 0 30px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .card {
-    width: 275px;
-    margin: 10px;
-    border: 1.5px solid black;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 12px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    overflow: visible;
-    background-color: rgb(232, 237, 238);
-  }
+
   
   .card-content {
     padding: 10px;
@@ -111,6 +93,36 @@ body, html {
     font-size: var(--font-reg);
   }
 
+
+ 
+  .card p {
+    margin: 5px 0;
+    font-size: var(--font-reg);
+  }
+
+
+
+
+
+
+
+
+
+
+  .card-container {
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+
+  .page-header{
+    display: flex;
+    margin-left: 20px;
+  }
+  
+
   .card-title {
     color: rgb(12, 140, 225);
   }
@@ -126,8 +138,32 @@ body, html {
     align-items: center;
   }
 
-  .page-header{
+
+
+  body {
+    margin: 0;
     display: flex;
-    margin-left: 20px;
-  }
-  
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    /* --nav-bg: rgba(104, 197, 248, 0.7); */
+    /* --nav-bg-ff: rgba(104, 197, 248, 0.9); */
+    /* --borders: rgb(36, 116, 248) solid 2px; */
+    /* --text-color: rgb(17, 20, 17); */
+    /* --link-hover-color: rgb(16, 56, 158);
+    --button-bg: rgb(245, 245, 245);
+    --button-bg-hover: rgb(226, 226, 226);
+    --submit: rgb(64, 72, 220);
+    --warn: rgb(255, 102, 0);
+    --danger: rgb(220, 20, 30);
+    --secondary: rgb(57, 57, 57); */
+    /* --card-box-shadow: 5px 5px 6px -1px #aaa; */
+    --font-xtreme: 4.2rem;
+    --font-xxl: 3.6rem;
+    --font-xl: 2.4rem;
+    --font-l: 1.8rem;
+    --font-reg: 1.6rem;
+    --card-border-radius: 6px;
+} 
+
+

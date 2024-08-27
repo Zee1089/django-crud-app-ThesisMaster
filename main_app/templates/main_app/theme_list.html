@@ -7,26 +7,26 @@
 {% block body_class %}scroll-locked{% endblock %}
 
 {% block content %}
-<section class="theme-page-header">
-  <h1>All Papers Themes and Keywords</h1>
-  <!-- <img src="{% static 'images/string.svg' %}" alt="A ball of string" />
-  <img src="{% static 'images/mouse.svg' %}" alt="A mouse" />
-  <img src="{% static 'images/post.svg' %}" alt="A scratching post" />
-  <img src="{% static 'images/fish.svg' %}" alt="A fishy toy" /> -->
-</section>
+<div class="theme-title-container">
+  <img src="{% static 'images/brain.svg' %}" alt="A pink brain" class="tiny-icon" />
+  <img src="{% static 'images/dna.svg' %}" alt="A double stranded dna" class="tiny-icon" />
+  <img src="{% static 'images/gendata.svg' %}" alt="A genetic emblem" class="tiny-icon"/>
+  <h2 class="h2">My library's Themes
+</h2>
+</div>
 
-<section class="theme-card-container">
+<section class="theme-keywords-container">
   {% for theme in theme_list %}
     <div class="card" style="border-color: {{ theme.color }}">
       <div class="card-bg" style="background-color: {{ theme.color }}"></div>
       <a href="{% url 'theme-detail' theme.id %}">
         <div class="theme-card-content">
           <h2>{{theme.theme_name}}</h2>
-          <p>{{theme.keywords}}</p>
+          <h3>{{theme.keywords}}</h3>
         </div>
       </a>
     </div>
   {% endfor %}
 </section>
-
+</div>
 {% endblock %}

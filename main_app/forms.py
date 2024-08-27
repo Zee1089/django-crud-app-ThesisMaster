@@ -5,6 +5,9 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['note']
+        labels = {
+            'note': ''
+        }
         # widgets = {
         #     'date': forms.DateInput(
         #         format=('%Y-%m-%d'),

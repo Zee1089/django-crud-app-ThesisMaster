@@ -25,17 +25,18 @@
 .sidenave a {
     padding: 10px 20px; 
     text-decoration: none;
-    font-size: 18px; 
+    font-size: 20px; 
     color: #263b64; 
     display: block;
 
 }
 .sidenave a:hover {
-    color: rgb(152, 65, 155); 
+    color: black; 
+    font-weight: bold;
 }
 
 .sidenave .research-title {
     font-size: 14px; 
-    padding-left: 30px; 
+    padding-left: 32px; 
     color: black;
 }

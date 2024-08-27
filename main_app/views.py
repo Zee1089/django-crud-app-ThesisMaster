@@ -44,9 +44,9 @@ def about(request):
 def researchpaper_index(request):
     # Query all ResearchPaper objects from the database
     researchpapers = ResearchPaper.objects.filter(user=request.user)
-
+    themes = Theme.objects.all()
     # Render the researchpapers/index.html template with the researchpapers data
-    return render(request, 'researchpapers/index.html', {'researchpapers': researchpapers})
+    return render(request, 'researchpapers/index.html', {'researchpapers': researchpapers, 'themes': themes})
 
 @login_required
 def researchpaper_detail(request, researchpaper_id):
@@ -70,13 +70,14 @@ def add_comment(request, researchpaper_id):
         # has the cat_id assigned
         new_comment = form.save(commit=False)
         new_comment.researchpaper_id = researchpaper_id
+        new_comment.user = request.user
         new_comment.save()
     return redirect('researchpaper-detail', researchpaper_id=researchpaper_id)
 
 
 class ResearchPaperCreate(LoginRequiredMixin, CreateView):
     model = ResearchPaper
-    fields = ['title', 'authors', 'journal', 'major_findings', 'publication_date']
+    fields = ['title', 'authors', 'journal','publication_date', 'major_findings', 'url' , 'entire_paper']
     success_url = '/researchpapers/'
     def form_valid(self, form):
         form.instance.user = self.request.user 

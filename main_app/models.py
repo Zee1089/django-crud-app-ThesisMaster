@@ -22,7 +22,8 @@ class ResearchPaper(models.Model):
     major_findings = models.TextField(max_length=800)
     themes = models.ManyToManyField(Theme)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
+    url = models.URLField(max_length=400, blank=True, null=True)  # New field
+    entire_paper = models.TextField()
 
     def __str__(self):
         return self.title

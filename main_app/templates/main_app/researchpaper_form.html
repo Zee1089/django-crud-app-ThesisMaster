@@ -1,18 +1,35 @@
 {% extends 'base.html' %} 
-{% block body_class %}scroll-locked{% endblock %}
 {% load static %} 
+{% block body_class %}scroll-locked{% endblock %}
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/form.css' %}" />
+<link rel="stylesheet" href="{% static 'css/sidenave.css' %}" />
 {% endblock %} 
-{% block content %}
 
-<div class="page-header">
-    {% if cat %}
-        <h1>Edit {{ object.title }}</h1>
-    {% else %}
-        <h1></h1>
-    {% endif %}
-    <img src="{% static 'images/bookworm.svg' %}" alt="A bookworm icon" class="bookicon"/>
+{% block content %}
+<div class="sidenav-container">
+    <div class="sidenave">
+        {% if user.is_authenticated %}
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'researchpaper-index' %}">Research Articles List</a>
+            {% for researchpaper in researchpapers %}
+                <a href="{{ researchpaper.get_absolute_url }}" class="research-title">{{ researchpaper.title }}</a>
+            {% endfor %}
+            <a href="{% url 'researchpaper-create' %}">Add a Paper</a>
+            <a href="{% url 'theme-create' %}">Add a Theme</a>
+            <a href="{% url 'theme-index' %}">Themes</a>
+        {% else %}
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'home' %}">Login</a>
+            <a href="{% url 'signup' %}">Sign Up</a>
+        {% endif %}
+    </div>
+</div>
+<div class ="form-content">
+<div class="page-header">   
+    <h1>Add a Paper to the Master Library</h1>
+    <img src="{% static 'images/gendata.svg' %}" alt="genetic"/>
 </div>
 
 <form action="" method="post" class="form-container">
@@ -22,5 +39,5 @@
   </table>
   <button type="submit" class="btn submit">Submit!</button>
 </form>
-
+</div>
 {% endblock %}
