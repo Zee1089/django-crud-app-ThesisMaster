@@ -1,3 +1,7 @@
+:root{
+    font-size: 62.5%;
+}
+
 .user-initial-circle {
     position: fixed;
     bottom: 25px;
@@ -86,19 +90,9 @@
     color: black;
 }
 
-/* .paper-list-themed {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    font-size: 16px;
-    max-width: 600px !important;
-    background-color: antiquewhite!important;
-    text-decoration: none;
-
-} */
 .theme-detail-content {
     margin-left: 320px;
-    padding: 20px; 
+    padding: 30px; 
     width: calc(100% - 320px); 
     box-sizing: border-box;
     font-size: 14px;
@@ -110,3 +104,104 @@
     margin: 10px 0;
 }
 
+
+
+.theme-title-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: aliceblue;
+    margin-bottom: 40px;
+    width: 800px;
+}
+
+.tiny-icon{
+    width: 55px;
+    height: auto;
+}
+
+
+/* Main content area styling */
+.theme-detail-content {
+    margin-left: 320px;
+    padding: 30px;
+    width: calc(100% - 320px);
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the paper list */
+.paper-list-themed {
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #d3dcee;
+    margin-bottom: 20px;
+    max-width: 800px;
+}
+
+.paper-list-themed h2 {
+    font-size: 1.8rem;
+    margin: 10px 0;
+    color: #007bff;
+    transition: color 0.3s;
+}
+
+.paper-list-themed h2 a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Card content for keywords and actions */
+.card-content {
+ 
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 160px;
+}
+
+.card-content h2 {
+    font-size: 1.6rem;
+    color: #333;
+}
+
+.card-content .btn {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-content .btn.warn2 {
+    background-color: #76bee0;
+    color: #fff;
+}
+
+.card-content .btn.danger2 {
+    background-color: #6780ff;
+    color: #fff;
+}
+
+.card-content .btn:hover {
+    opacity: 0.8;
+}
+/* Remove underline from links in .paper-list-themed */
+.paper-list-themed h2 a {
+    text-decoration: none; /* Removes the underline */
+    color: #007bff; /* Ensures the color is still applied */
+    transition: color 0.3s;
+}
+
+/* Hover effect to add underline */
+.paper-list-themed h2 a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+    color: #0056b3; /* Darker shade on hover for a nice effect */
+}

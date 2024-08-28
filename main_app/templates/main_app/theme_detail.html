@@ -36,19 +36,26 @@
     <p>{{ user.username|slice:":1" }}</p>
 </div>
 {% endif %}
+<div class="theme-title-container">
+  <img src="{% static 'images/brain.svg' %}" alt="A pink brain" class="tiny-icon" />
+  <img src="{% static 'images/dna.svg' %}" alt="A double stranded dna" class="tiny-icon" />
+  <img src="{% static 'images/gendata.svg' %}" alt="A genetic emblem" class="tiny-icon"/>
+  <h2 class="h2"> {{ theme.theme_name }}'s Papers
+</h2>
+</div>
 
+<div class="theme-detail-contendt"></div>
 
-<div class="theme-detail-content"></div>
-  <h1> {{ theme.theme_name }}'s Papers</h1>
+  
     <div class = "paper-list-themed">
       <ul>
         {% for researchpaper in researchpapers %}
       <h2><a href="{{ researchpaper.get_absolute_url }}">{{ researchpaper.title }}</a></h2>
         {% endfor %}
+        <h2>Associated Keywords: {{ theme.keywords}} </h2>
       </ul>
     </div>
     <div class="card-content">
-      <h2>Associated Keywords: {{ theme.keywords}} </h2>
       <a href="{% url 'theme-update' theme.id %}" class="btn warn2">Edit</a>
       <a href="{% url 'theme-delete' theme.id %}" class="btn danger2">Delete</a>
     </div>

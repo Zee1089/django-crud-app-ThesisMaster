@@ -19,9 +19,12 @@
         <div class="sidenave">
             <img src="{% static 'images/library-books.svg' %}" alt="stacked books" class="sidenav-icon">
             {% if user.is_authenticated %}
-                <a href="{% url 'home' %}">🏠 Home</a>
-                <a href="{% url 'about' %}">🗒️ About</a>
-                <a href="{% url 'researchpaper-index' %}">📖 Research Articles List</a>
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/home.svg' %}" alt="Home icon" style="width: 25px; height: 25px; margin-right: 5px;" /> 
+                Home
+            </a>
+                <a href="{% url 'about' %}">About</a>
+                <a href="{% url 'researchpaper-index' %}"> My Research Library</a>
                     {% for researchpaper in researchpapers %}
                         <a href="{{ researchpaper.get_absolute_url }}" class="research-title">{{ researchpaper.title }}</a>
                     {% endfor %}
@@ -34,7 +37,7 @@
                 <div class="logout-container">
                     <form method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
-                        <button type="submit" class="logout-button">Log out</button>
+                        <button type="submit" class="btn submit">Log out</button>
                     </form>
                 </div>
             {% else %}
@@ -51,28 +54,7 @@
     </div>
     {% endif %}
 
-    <header class="header">
-        <!-- <nav>
-            <ul>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'researchpaper-index' %}">Research Articles List</a></li>
-                <li><a href="{% url 'researchpaper-create' %}">Add a Paper</a></li>
-                <li><a href="{% url 'theme-create' %}">Show Progress</a></li>
-                <li><a href="{% url 'theme-index' %}">All Details</a></li>
-            </ul>
-        </nav> -->
-    </header>
     <main>
-   
-        <!-- <nav>
-            <ul>
-                <li><a href="{% url 'about' %}">About</a></li>
-                <li><a href="{% url 'researchpaper-index' %}">Research Articles List</a></li>
-                <li><a href="{% url 'researchpaper-create' %}">Add a Paper</a></li>
-                <li><a href="{% url 'theme-create' %}">Show Progress</a></li>
-                <li><a href="{% url 'theme-index' %}">All Details</a></li>
-            </ul>
-        </nav> -->
 
         {% block content %} 
         {% endblock %}

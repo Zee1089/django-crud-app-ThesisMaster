@@ -138,7 +138,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 LOGIN_URL = 'home'
 # Add this variable to specify where successful logins should redirect to
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'researchpaper-index'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

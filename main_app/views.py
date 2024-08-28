@@ -86,7 +86,7 @@ class ResearchPaperCreate(LoginRequiredMixin, CreateView):
 class ResearchPaperUpdate(LoginRequiredMixin, UpdateView):
     model = ResearchPaper
     # Specify the fields that can be updated
-    fields = ['title', 'authors', 'journal', 'publication_date', 'major_findings']
+    fields = ['title', 'authors', 'journal', 'publication_date', 'major_findings', 'entire_paper']
 
 class ResearchPaperDelete(LoginRequiredMixin, DeleteView):
     model = ResearchPaper

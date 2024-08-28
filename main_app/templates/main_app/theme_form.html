@@ -2,14 +2,14 @@
 {% block body_class %}scroll-locked{% endblock %}
 {% load static %} 
 {% block head %}
-  <link rel="stylesheet" href="{% static 'css/form2.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/form.css' %}" />
 {% endblock %} 
 {% block content %}
 
   <div class="page-header">
     {% if object %}
       <h1>Edit {{ object.get_theme_display }}</h1>
-      <p>Date: {{ object.theme_name }}</p> 
+
     {% else %}
       <h1>Select the Theme and Keywords Associated with the paper</h1>
     {% endif %}

@@ -13,6 +13,8 @@
 </section>
 
 <section class="card-container">
+ {% if researchpapers.count > 0 %}
+
   {% for researchpaper in researchpapers %}
     <div class="card">
       <a href="{% url 'researchpaper-detail' researchpaper.id %}">
@@ -28,5 +30,8 @@
     </div>
   {% endfor %}
 </section>
+{% else %}
+<h2 class="no-papers-message">Create your research library by adding papers!</h2>
 
+{% endif %}
 {% endblock %}

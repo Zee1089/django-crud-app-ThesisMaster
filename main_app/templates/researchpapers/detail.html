@@ -49,7 +49,7 @@
                 <h3><span style="font-weight: normal;">{{ researchpaper.authors }}</span></h3>
                 <h3>{{ researchpaper.journal }}</h3>
                 <p>Published on: {{ researchpaper.publication_date }}</p>
-                <p>URL: <a href="{{ researchpaper.url }}">{{ researchpaper.title }}</a></p>
+                <p>URL: <a href="{{ researchpaper.url }}" class="url-link">{{ researchpaper.title }}</a></p>
             </div>
             <div class="researchpaper-actions">
                 <a href="{% url 'researchpaper-update' researchpaper.id %}" class="btn warn">Edit</a>
@@ -57,59 +57,57 @@
             </div>
         </div>
         <p class="major-findings">{{ researchpaper.major_findings }}</p>
-        <p class="major-findings">{{ researchpaper.entire_paper }}</p>
+
+        <section class="themes-container">
+            <div class="subsection-title">
+                <h2>Paper's Themes</h2>
+            </div>
+            <div class="theme-keywords-container">
+                {% if researchpaper.themes.count %}
+                    {% for theme in researchpaper.themes.all %}
+                        <div class="theme-container">
+                            <a href="{% url 'theme-detail' theme.id %}">
+                                <!-- <h2 class="theme-card-content">{{ theme.theme_name }}</h2>
+                                <h3 class="theme-kw-content">{{ theme.keywords }}</h3> -->
+                            </a>
+                            <form action="{% url 'remove-theme' researchpaper.id theme.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn danger"> - {{ theme.theme_name }}</button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <p class="major-findings">{{ researchpaper.entire_paper }}</p>
+            <h3>Available Themes</h3>
+            <div class="theme-keywords-container">
+                {% if themes.count %}
+                    {% for theme in themes.all %}
+                        <div class="theme-container">
+                            <a href="{% url 'theme-detail' theme.id %}">
+                                <!-- <h2 class="theme-card-content">{{ theme.theme_name }}</h2>
+                                <h3 class="theme-kw-content">{{ theme.keywords }}</h3> -->
+                            </a>
+                            <form action="{% url 'associate-theme' researchpaper.id theme.id %}" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn submit">+ {{ theme.theme_name }}</button>
+                            </form>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p class="all-theme">{{ researchpaper.title }} already contains all topics</p>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+
     </section>
-
-    <section class="themes-container">
-        <div class="subsection-title">
-            <h2>Themes</h2>
-        </div>
-        <div class="theme-keywords-container">
-            {% if researchpaper.themes.count %}
-                {% for theme in researchpaper.themes.all %}
-                    <div class="theme-container">
-                        <a href="{% url 'theme-detail' theme.id %}">
-                            <!-- <h2 class="theme-card-content">{{ theme.theme_name }}</h2>
-                            <h3 class="theme-kw-content">{{ theme.keywords }}</h3> -->
-                        </a>
-                        <form action="{% url 'remove-theme' researchpaper.id theme.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn danger"> x {{ theme.theme_name }}</button>
-                        </form>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        </div>
-
-        <h3>Available Themes</h3>
-        <div class="theme-keywords-container">
-            {% if themes.count %}
-                {% for theme in themes.all %}
-                    <div class="theme-container">
-                        <a href="{% url 'theme-detail' theme.id %}">
-                            <!-- <h2 class="theme-card-content">{{ theme.theme_name }}</h2>
-                            <h3 class="theme-kw-content">{{ theme.keywords }}</h3> -->
-                        </a>
-                        <form action="{% url 'associate-theme' researchpaper.id theme.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn submit">+ {{ theme.theme_name }}</button>
-                        </form>
-                    </div>
-                {% endfor %}
-            {% else %}
-                <p class="all-theme">{{ researchpaper.title }} already contains all topics</p>
-            {% endif %}
-        </div>
-    </section>
-</div>
-
-
 
 
     
 <div class="comments-and-themes">
     <div class="comments-section">
-        <h2 class="title-for-comments">Annotations</h2>
+        <h2 class="title-for-comments">Personal Notes</h2>
         <div class="comments-form">
             {% if researchpaper.comment_set.all.count %}
                 <ul>

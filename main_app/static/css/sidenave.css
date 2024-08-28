@@ -11,15 +11,10 @@
     overflow-x: hidden; 
     padding-top: 20px; 
     border-right: 1px solid #263b64;
-    border-left: 1.5cm solid #d3dcee;
+    border-left: 1.5cm solid rgb(202, 38, 38);
     
     /* transition: left 0.3s ease;  */
 }
-
-
-
-
-
 
 .sidenave1{
     font-weight: bold;
@@ -47,3 +42,21 @@
     padding-left: 30px; 
     color: black;
 }
+
+.sidenave a, .logout-container button {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #263b64;
+    display: block;
+    background: none; /* Remove background to match links */
+    border: none; /* Remove border to look like links */
+    cursor: pointer; /* Ensure cursor shows as a pointer */
+    font-family: inherit; /* Match font with sidenav links */
+}
+
+/* Hover effect to match the look of sidenav links */
+.sidenave a:hover, .logout-container button:hover {
+    color: var(--link-hover-color); /* Adjust hover color to match link hover state */
+}
+
