@@ -16,18 +16,18 @@ The reason I built MindMapp is that managing research can be stressful, especial
 
 - **App Inspiration**: Some aspects of this application were inspired by the "Cat Collector" CRUD app developed during the General Assembly Software Engineering Immersive program.
 
-- **Assistance**: Some guidance and code suggestions were provided by ChatGPT, an AI language model created by OpenAI, which was used as a tool to refine ideas and troubleshoot code.
+- **Assistance**: Some guidance and code suggestions were provided by ChatGPT, a language model created by OpenAI, which was used as a tool to sometimes refine css and troubleshoot code.
 
 ## Technologies Used:
 
 
 **Python**: Language for Backend.
 
-**Django**: Web Framework for Backend.
+**Django**'s templates for rendering templates to users. Django's built-in session-based authentication.
 
 **PostgreSQL**: Relational database management system used to store research data securely.
 
-**HTML, CSS and JavaScript**: used to create interactive and user friendly interface for Frontend technologies.
+**HTML, CSS Flexbox and JavaScript**: used to create interactive and user friendly interface for Frontend technologies.
 
 **Heroku**: Cloud platform used for deployment, making MindMapp accessible online. 
 
@@ -35,6 +35,6 @@ The reason I built MindMapp is that managing research can be stressful, especial
 
 
 #### 3. Next Steps:
-**Build a Built-in Notebook**: Integrate a notebook directly into MindMapp, allowing users to write and organize their thesis. This feature will enable users to keep everything in one place, streamlining the writing process and ensuring all research components remain connected within the app.
+- **Build a Built-in Notebook**: Integrate a notebook directly into MindMapp, allowing users to write and organize their thesis. This feature will enable users to keep everything in one place, streamlining the writing process and ensuring all research components remain connected within the app.
 
-**Build a Community Page**: Create a community page for researchers to collaborate, share progress, notes, and papers. To create an efficiently and seamless working environment. 
+- **Build a Community Page**: Create a community page for researchers to collaborate, share progress, notes, and papers. To create an efficiently and seamless working environment. 
