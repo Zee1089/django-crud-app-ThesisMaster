@@ -17,6 +17,7 @@
 
     <div class="sidenav-container">
         <div class="sidenave">
+            <img src="{% static 'images/library-books.svg' %}" alt="stacked books" class="sidenav-icon">
             {% if user.is_authenticated %}
                 <a href="{% url 'home' %}">🏠 Home</a>
                 <a href="{% url 'about' %}">🗒️ About</a>
@@ -30,6 +31,12 @@
                     {% for theme in themes %}
                      <a href="{{ theme.get_absolute_url }}" class="research-title">{{ theme.theme_name }}</a>
                 {% endfor %}
+                <div class="logout-container">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="logout-button">Log out</button>
+                    </form>
+                </div>
             {% else %}
                 <a href="{% url 'about' %}">About</a>
                 <a href="{% url 'home' %}">Login</a>
@@ -37,6 +44,12 @@
             {% endif %}
         </div>
     </div>
+
+    {% if user.is_authenticated %}
+    <div class="user-initial-circle">
+        <p>{{ user.username|slice:":1" }}</p>
+    </div>
+    {% endif %}
 
     <header class="header">
         <!-- <nav>
@@ -50,6 +63,7 @@
         </nav> -->
     </header>
     <main>
+   
         <!-- <nav>
             <ul>
                 <li><a href="{% url 'about' %}">About</a></li>
@@ -59,12 +73,9 @@
                 <li><a href="{% url 'theme-index' %}">All Details</a></li>
             </ul>
         </nav> -->
+
         {% block content %} 
         {% endblock %}
     </main>
 </body>
 </html>
-
-
-
- <!-- <img src="{% static 'images/article.svg' %}" alt="Research Article Selected" /> -->

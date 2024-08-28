@@ -1,23 +1,62 @@
-<!-- {% extends 'base.html' %} -->
-
-{% block body_class %}scroll-locked{% endblock %}
-
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
 {% block content %}
-<h1 class="centered-header">Thesis Master Organizer</h1>
 
-<p class="page-content">
-  Organizing your Thesis Master like a Master Chef.
-  If you need help retrieving data from all the different papers, this can help you organize your work.
-</p>
-{% if user.is_authenticated %}
-  <form id="" method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">Log out</button>
-  </form>
-{% else %}
-  <!-- <a href="{% url 'about' %}">About</a>
-  <a href="{% url 'home' %}">Login</a>
-  <a href="{% url 'signup' %}">Sign Up</a> -->
-{% endif %}
+<div class="about-content">
+  <h2>What is MindMapp?</h2>
+  <p>
+    MindMapp is your ultimate tool for organizing and managing academic research. Designed with students and researchers in mind, MindMapp provides a streamlined, intuitive platform to store, access, and analyze all your research materials in one place.
+  </p>
+   
+  <h2>Key Features</h2>
+  MindMapp helps you:
 
+  <ul>
+    <li>Effortlessly organize and categorize your research papers.</li>
+    <li>Access your notes and ideas quickly, whenever you need them.</li>
+    <li>Analyze and cross-reference your research materials.</li>
+    <li>Streamline your workflow, so you can focus on your research.</li>
+  </ul>
+
+  <h2>Program Missions</h2>
+  <p>
+    The mission of MindMapp is to empower researchers by providing tools that enhance productivity and ensure all research materials are efficiently organized. Our platform supports your academic journey by allowing you to:
+  </p>
+  <ul>
+    <li>Maintain a well-organized repository of your research work.</li>
+    <li>Collaborate with peers and mentors effortlessly.</li>
+    <li>Focus on what matters most—producing high-quality research.</li>
+  </ul>
+
+  <h2>Partners and Collaborators</h2>
+  <p>
+    MindMapp partners with educational institutions, research organizations, and libraries to provide a comprehensive resource management system tailored to the needs of academics and students.
+  </p>
+
+  <h2>Personnel</h2>
+  <p>
+    <strong>Project Principal Investigator:</strong>ZEE <br>
+    <strong>Program Manager:</strong> [Zee]
+  </p>
+
+  <h2>Website Use Disclaimer</h2>
+  <p>
+    External links on this website are provided for information only. Links do not imply endorsement or approval by MindMapp. MindMapp is not liable for any direct, indirect, incidental, consequential, special, or exemplary damages or lost profits resulting from any use, misuse, or reliance on any of the data or information appearing on this site.
+  </p>
+
+  <h2>Data Use Disclaimer</h2>
+  <p>
+    Data available on the MindMapp platform is subject to its own disclaimers and access policies. Real-time data should be considered provisional and subject to change or retraction after quality control. No warranty is made regarding the accuracy or validity of the data or the suitability of the data for any particular application.
+  </p>
+
+  <h2>Data Access Policy</h2>
+  <p>
+    All real-time and archived data available through MindMapp may be freely used. Ethical scientific practice requires proper acknowledgment of MindMapp in any publications or presentations that use our data.
+  </p>
+</div>
+
+</div>
 {% endblock %}

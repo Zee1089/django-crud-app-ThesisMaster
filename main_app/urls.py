@@ -17,7 +17,7 @@ urlpatterns = [
         name='add-comment'
     ),
     path('themes/create/', views.ThemeCreate.as_view(), name='theme-create'),
-    path('themes/<int:pk>/', views.ThemeDetail.as_view(), name='theme-detail'),
+    path('themes/<int:pk>/', views.theme_detail, name='theme-detail'),
     path('themes/', views.ThemeList.as_view(), name='theme-index'),
     path('themes/<int:pk>/update/', views.ThemeUpdate.as_view(), name='theme-update'),
     path('themes/<int:pk>/delete/', views.ThemeDelete.as_view(), name='theme-delete'),

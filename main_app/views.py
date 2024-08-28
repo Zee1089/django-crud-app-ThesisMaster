@@ -59,7 +59,6 @@ def researchpaper_detail(request, researchpaper_id):
     comment_form = CommentForm()
     return render(request, 'researchpapers/detail.html', {'researchpaper' : researchpaper, 'comment_form' : comment_form, 'themes': themes})
 
-
 @login_required
 def add_comment(request, researchpaper_id):
     # create a ModelForm instance using the data in request.POST
@@ -105,7 +104,7 @@ class ThemeDetail(LoginRequiredMixin, DetailView):
 
 class ThemeUpdate(LoginRequiredMixin, UpdateView):
     model = Theme
-    fields = ['theme_name', 'color', 'keywords']
+    fields = ['theme_name', 'keywords']
 
 class ThemeDelete(LoginRequiredMixin, DeleteView):
     model = Theme
@@ -122,3 +121,9 @@ def associate_theme(request, researchpaper_id, theme_id):
 def remove_theme(request, researchpaper_id, theme_id):
     ResearchPaper.objects.get(id=researchpaper_id).themes.remove(theme_id)
     return redirect('researchpaper-detail', researchpaper_id=researchpaper_id)
+
+@login_required
+def theme_detail(request, pk):
+    theme = Theme.objects.get(pk=pk)
+    researchpapers = ResearchPaper.objects.filter(themes=theme)
+    return render(request, 'main_app/theme_detail.html', {'researchpapers': researchpapers, 'theme': theme})

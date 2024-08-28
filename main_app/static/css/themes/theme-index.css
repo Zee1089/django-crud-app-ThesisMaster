@@ -9,15 +9,10 @@
     align-items: flex-start;
     background-color: #d3e2ff;
     margin-bottom: 40px;
-
 }
 
 .theme-keywords-container {
-    max-width: 400px;
-    background-color: #d3e2ff;
-
-
-
+    max-width: 200px;
 
 }
 
@@ -47,7 +42,7 @@
     color: black;
     border: 1px solid black;
     border-radius: 25px;
-    background-color: rgb(255, 192, 203);
+    background-color: pink;
     display: flex;
     justify-content: center;
     text-align: center;

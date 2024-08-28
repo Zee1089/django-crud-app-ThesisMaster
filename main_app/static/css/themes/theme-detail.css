@@ -1,0 +1,112 @@
+.user-initial-circle {
+    position: fixed;
+    bottom: 25px;
+    left: 12px;
+    width: 35px;
+    height: 35px;
+    background-color: aliceblue;
+    color: rgb(185, 176, 183);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 1000;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.user-initial-circle p {
+    margin: 0;
+    padding: 0;
+}
+
+.sidenav-icon{
+    position: fixed;
+    top: 25px;
+    left: 12px;
+    width: 35px;
+    height: 35px;
+    background-color: aliceblue;
+    color: rgb(185, 176, 183);
+    border-radius: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 1000;
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+}
+
+.sidenave {
+    height: 100%; 
+    width: 300px; 
+    position:fixed;
+    z-index: 1000; 
+    top: 0; 
+    left: 0; 
+    /* left: -250px; */
+    /* background-color: #d3e2ff;  */
+    background-color: rgb(255, 251, 251);
+    overflow-x: hidden; 
+    padding-top: 20px; 
+    border-right: 1px solid #d3dcee;
+    border-left: 1.5cm solid #d3dcee;
+    right: 0;
+   
+    
+    /* transition: left 0.3s ease;  */
+}
+
+.sidenave1{
+    font-weight: bold;
+}
+
+.sidenave2{
+    font-weight: bold;
+}
+
+.sidenave a {
+    padding: 10px 25px; 
+    text-decoration: none;
+    font-size: 20px; 
+    color: #263b64; 
+    display: block;
+
+}
+.sidenave a:hover {
+    color: black; 
+    font-weight: bold;
+}
+
+.sidenave .research-title {
+    font-size: 14px; 
+    padding-left: 30px; 
+    color: black;
+}
+
+/* .paper-list-themed {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 16px;
+    max-width: 600px !important;
+    background-color: antiquewhite!important;
+    text-decoration: none;
+
+} */
+.theme-detail-content {
+    margin-left: 320px;
+    padding: 20px; 
+    width: calc(100% - 320px); 
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.paper-list-themed h2 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+

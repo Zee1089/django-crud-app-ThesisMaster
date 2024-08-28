@@ -1,18 +1,25 @@
 .sidenave {
     height: 100%; 
-    width: 250px; 
+    width: 300px; 
     position: fixed; 
     z-index: 1000; 
     top: 0; 
     left: 0; 
     /* left: -250px; */
-    background-color: #d3e2ff; 
+    /* background-color: #d3e2ff;  */
+    background-color: rgb(255, 251, 251);
     overflow-x: hidden; 
     padding-top: 20px; 
     border-right: 1px solid #263b64;
+    border-left: 1.5cm solid #d3dcee;
     
     /* transition: left 0.3s ease;  */
 }
+
+
+
+
+
 
 .sidenave1{
     font-weight: bold;
@@ -37,6 +44,6 @@
 
 .sidenave .research-title {
     font-size: 14px; 
-    padding-left: 32px; 
+    padding-left: 30px; 
     color: black;
 }

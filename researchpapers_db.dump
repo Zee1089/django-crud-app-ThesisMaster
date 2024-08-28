@@ -1,0 +1,100 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 16.3 (Homebrew)
+-- Dumped by pg_dump version 16.3 (Homebrew)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: researchpapers; Type: TABLE; Schema: public; Owner: zelda
+--
+
+CREATE TABLE public.researchpapers (
+    id integer NOT NULL,
+    title character varying(150) NOT NULL,
+    authors character varying(500) NOT NULL,
+    journal character varying(100) NOT NULL,
+    publication_date date NOT NULL,
+    major_findings text,
+    url character varying(400),
+    entire_paper text
+);
+
+
+ALTER TABLE public.researchpapers OWNER TO zelda;
+
+--
+-- Name: researchpapers_id_seq; Type: SEQUENCE; Schema: public; Owner: zelda
+--
+
+CREATE SEQUENCE public.researchpapers_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER SEQUENCE public.researchpapers_id_seq OWNER TO zelda;
+
+--
+-- Name: researchpapers_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: zelda
+--
+
+ALTER SEQUENCE public.researchpapers_id_seq OWNED BY public.researchpapers.id;
+
+
+--
+-- Name: researchpapers id; Type: DEFAULT; Schema: public; Owner: zelda
+--
+
+ALTER TABLE ONLY public.researchpapers ALTER COLUMN id SET DEFAULT nextval('public.researchpapers_id_seq'::regclass);
+
+
+--
+-- Data for Name: researchpapers; Type: TABLE DATA; Schema: public; Owner: zelda
+--
+
+COPY public.researchpapers (id, title, authors, journal, publication_date, major_findings, url, entire_paper) FROM stdin;
+1	Single-Cell RNA-Seq Reveals Hypothalamic Cell Diversity	Chen R, Wu X, Jiang L, Zhang Yi	Cell Reports	2017-03-01	Here, we report single-cell RNA sequencing results of adult mouse hypothalamus, which defines 11 non-neuronal and 34 neuronal cell clusters with distinct transcriptional signatures. Analyses of cell-type-specific transcriptomes reveal gene expression dynamics underlying oligodendrocyte differentiation and tanycyte subtypes. Additionally, data analysis provides a comprehensive view of neuropeptide expression across hypothalamic neuronal subtypes and uncovers Crabp1+ and Pax6+ neuronal populations in specific hypothalamic subregions. Furthermore, we found food deprivation exhibited differential transcriptional effects among the different neuronal subtypes, suggesting functional specification of various neuronal subtypes. Thus, the work provides a comprehensive transcriptional perspective of the adult hypothalamus, which serves as a valuable resource for dissecting cell-type-specific functions of this complex brain region.	\N	\N
+2	Single-cell analysis of the aging female mouse hypothalamus	Kaitlyn H. Hajdarovic, Doudou Yu, Lexi-Amber Hassell, Shane A. Evans, Sarah Packer, Nicola Neretti, Ashley E. Webb	Nature Aging	2022-07-04	Alterations in metabolism, sleep patterns, body composition, and hormone status are all key features of aging. While the hypothalamus is a well-conserved brain region that controls these homeostatic and survival-related behaviors, little is known about the intrinsic features of hypothalamic aging. Here, we perform single-nuclei RNA sequencing of 40,064 hypothalamic nuclei from young and aged female mice. We identify cell type-specific signatures of aging in neuronal subtypes as well as astrocytes and microglia. We uncover changes in cell types critical for metabolic regulation and body composition and in an area of the hypothalamus linked to cognition. Our analysis also reveals an unexpected female-specific feature of hypothalamic aging: the master regulator of X inactivation, Xist, is elevated with age, particularly in hypothalamic neurons. Moreover, using machine learning, we show that levels of X chromosome genes and Xist itself, can accurately predict cellular age. This study identifies critical cell-specific changes of the aging hypothalamus in mammals and uncovers a potential marker of neuronal aging in females.	\N	\N
+3	Current best practices in single‐cell RNA‐seq analysis: a tutorial	Malte D Luecken, Fabian J Theis	Mol Syst Biol	2019-06-19	Single-cell RNA-seq has enabled gene expression to be studied at an unprecedented resolution. The promise of this technology is attracting a growing user base for single-cell analysis methods. As more analysis tools are becoming available, it is becoming increasingly difficult to navigate this landscape and produce an up-to-date workflow to analyze one’s data. Here, we detail the steps of a typical single-cell RNA-seq analysis, including pre-processing (quality control, normalization, data correction, feature selection, and dimensionality reduction) and cell- and gene-level downstream analysis. We formulate current best-practice recommendations for these steps based on independent comparison studies. We have integrated these best-practice recommendations into a workflow, which we apply to a public dataset to further illustrate how these steps work in practice. Our documented case study can be found at https://www.github.com/theislab/single-cell-tutorial. This review will serve as a workflow tutorial for new entrants into the field, and help established users update their analysis pipelines.	\N	\N
+7	Current best pracrial	Malte D Luecken, Fabian J Theis	Mol Syst Biol	2019-06-01	UPDATED TEXT lines again.	\N	\N
+\.
+
+
+--
+-- Name: researchpapers_id_seq; Type: SEQUENCE SET; Schema: public; Owner: zelda
+--
+
+SELECT pg_catalog.setval('public.researchpapers_id_seq', 7, true);
+
+
+--
+-- Name: researchpapers researchpapers_pkey; Type: CONSTRAINT; Schema: public; Owner: zelda
+--
+
+ALTER TABLE ONLY public.researchpapers
+    ADD CONSTRAINT researchpapers_pkey PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

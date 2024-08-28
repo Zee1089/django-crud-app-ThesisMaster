@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% load static %} 
-{% block body_class %}scroll-locked{% endblock %}
+<!-- {% block body_class %}scroll-locked{% endblock %} -->
 {% block head %}
 <link rel="stylesheet" href="{% static 'css/form.css' %}" />
 <link rel="stylesheet" href="{% static 'css/sidenave.css' %}" />
@@ -9,6 +9,7 @@
 {% block content %}
 <div class="sidenav-container">
     <div class="sidenave">
+        <img src="{% static 'images/brain.svg' %}" alt="stacked books" class="sidenav-icon">
         {% if user.is_authenticated %}
             <a href="{% url 'home' %}">Home</a>
             <a href="{% url 'about' %}">About</a>
@@ -31,6 +32,12 @@
     <h1>Add a Paper to the Master Library</h1>
     <img src="{% static 'images/gendata.svg' %}" alt="genetic"/>
 </div>
+
+{% if user.is_authenticated %}
+<div class="user-initial-circle">
+    <p>{{ user.username|slice:":1" }}</p>
+</div>
+{% endif %}
 
 <form action="" method="post" class="form-container">
   {% csrf_token %}
