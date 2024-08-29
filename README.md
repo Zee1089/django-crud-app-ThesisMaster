@@ -16,7 +16,7 @@ The reason I built MindMapp is that managing research can be stressful, especial
 
 - **App Inspiration**: Some aspects of this application were inspired by the "Cat Collector" CRUD app developed during the General Assembly Software Engineering Immersive program.
 
-- **Assistance**: Some guidance and code suggestions were provided by ChatGPT, a language model created by OpenAI, which was used as a tool to sometimes refine css and troubleshoot code.
+- **Assistance**: google search for css.
 
 ## Technologies Used:
 
